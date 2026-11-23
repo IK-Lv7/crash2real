@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+# external checkouts, data and results (may be symlinks)
+drivestudio
+SegFormer
+Difix3D
+data
+outputs
+logs
+*.pth
+*.ckpt
+*.ply

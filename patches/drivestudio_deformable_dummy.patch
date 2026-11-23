@@ -1,0 +1,13 @@
+diff --git a/models/nodes/deformable.py b/models/nodes/deformable.py
+index ca75e81..4341587 100644
+--- a/models/nodes/deformable.py
++++ b/models/nodes/deformable.py
+@@ -51,7 +51,7 @@ class DeformableNodes(RigidNodes):
+         self.filter_mask = filter_mask
+         
+         delta_xyz, delta_quat, delta_scale = None, None, None
+-        if self.ctrl_cfg.use_deformgs_for_nonrigid and self.step > self.ctrl_cfg.use_deformgs_after:
++        if self.ctrl_cfg.use_deformgs_for_nonrigid and self.step > self.ctrl_cfg.use_deformgs_after and self._means.shape[0] > 1:  # a single dummy point (no non-rigid objects) breaks the deformation network
+             delta_xyz, delta_quat, delta_scale = self.get_deformation(local_means=self._means)
+         
+         if delta_xyz is not None:

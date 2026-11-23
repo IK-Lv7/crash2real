@@ -1,0 +1,14 @@
+diff --git a/datasets/argoverse/argoverse_preprocess.py b/datasets/argoverse/argoverse_preprocess.py
+index 358bd85..166a9b5 100644
+--- a/datasets/argoverse/argoverse_preprocess.py
++++ b/datasets/argoverse/argoverse_preprocess.py
+@@ -102,7 +102,8 @@ class ArgoVerseProcessor(object):
+             cam_names=tuple(cam_enums)
+         )
+         # a list of tfrecord pathnames
+-        self.training_files = open("data/argoverse_train_list.txt").read().splitlines()
++        # crash2real: allow replacing the log list with the AV2_LOG_LIST environment variable (to process val logs)
++        self.training_files = open(os.environ.get("AV2_LOG_LIST", "data/argoverse_train_list.txt")).read().splitlines()
+         self.log_pathnames = [
+             f"{self.load_dir}/{f}" for f in self.training_files
+         ]
