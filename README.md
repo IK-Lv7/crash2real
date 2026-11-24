@@ -2,7 +2,7 @@
 
 Collision scenes at real intersections, seen from the ego car's cameras, from before the impact until the cars come to rest, with ground-truth labels.
 
-**Paper**: [preprint on Zenodo](https://doi.org/10.5281/zenodo.24492041)
+**Paper**: [preprint on Zenodo](https://doi.org/10.5281/zenodo.24492042)
 
 ![A car from the next lane hits the front left of the ego car at a real intersection, seen from the ego front camera before, at and after the impact](docs/media/banner.gif)
 
